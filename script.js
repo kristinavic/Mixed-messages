@@ -72,5 +72,34 @@ const messages = {
     {
         title: "Cruise",
         artist: "Florida Georgia Line & Nelly"
-    }]
+    }],
+
+    //randomly pick a number from the luckyNumbers array
+    pickNumber() {
+        let luckyNumber = Math.floor(Math.random() * this.luckyNumbers.length);
+        return luckyNumber;
+    },
+
+    //randomly pick a letter from the luckyLetters array
+    pickLetter() {
+        let i = Math.floor(Math.random() * this.luckyLetters.length);
+        let luckyLetter = this.luckyLetters[i];
+        return luckyLetter;
+    },
+
+    //randomly pick a song from the songsOfTheDay array
+    pickSongOTD() {
+        let i = Math.floor(Math.random() * this.songsOfTheDay.length);
+        let title = this.songsOfTheDay[i].title;
+        let artist = this.songsOfTheDay[i].artist;
+        return `${title} by ${artist}`;
+    }
 }
+
+
+// console.log(messages.pickNumber());
+// console.log(messages.pickLetter());
+// console.log(messages.pickSongOTD());
+
+//final output
+console.log(`Your lucky number is ${messages.pickNumber()}, your lucky letter is ${messages.pickLetter()}. \nYour song of the day is ${messages.pickSongOTD()}.`);
